@@ -1,0 +1,20 @@
+{
+  "name": "bff",
+  "version": "1.0.0",
+  "description": "a demo project about how a BFF can be implemented in a microservices architecture",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon ./server.js"
+  },
+  "keywords": [
+    "bff"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-jwt": "^8.5.1"
+  }
+}
