@@ -7,7 +7,7 @@ import jakarta.persistence.Id
 class User(
     @Id
     @GeneratedValue
-    val id: Int,
+    val id: Int = 0,
 
     @Column(nullable = false)
     val name: String,

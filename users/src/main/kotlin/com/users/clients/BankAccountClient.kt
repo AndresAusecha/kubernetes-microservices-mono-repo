@@ -1,11 +1,27 @@
 package com.users.clients
 
+import com.users.dtos.BankAccountDto
 import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.request.*
+import kotlinx.coroutines.runBlocking
+import org.springframework.beans.factory.annotation.Value
+import mu.KotlinLogging
+
+private val logger = KotlinLogging.logger {}
 
 class BankAccountClient(
-  val client: HttpClient
+  private val client: HttpClient,
+  @Value("\${bank_accounts.base_url}") private val bankAccountsUrl: String
 ) {
-  fun createBankAccount() {
-
+  fun createBankAccount(bankAccountDto: BankAccountDto): BankAccountDto = runBlocking {
+    try {
+      client.post(bankAccountsUrl) {
+        setBody(bankAccountDto)
+      }.body()
+    } catch (e: Exception){
+      logger.error { e.message }
+      throw Exception("failure while creating the account")
+    }
   }
 }

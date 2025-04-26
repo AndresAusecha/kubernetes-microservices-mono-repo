@@ -30,6 +30,8 @@ dependencies {
 	implementation("io.ktor:ktor-client-okhttp:2.3.10") // For Android
 	implementation("io.ktor:ktor-client-content-negotiation:2.3.10")
 	implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.10")
+	implementation ("io.github.microutils:kotlin-logging-jvm:2.0.11")
+
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
