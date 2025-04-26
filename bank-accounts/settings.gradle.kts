@@ -1,1 +1,1 @@
-rootProject.name = "kubernets"
+rootProject.name = "bank_accounts"

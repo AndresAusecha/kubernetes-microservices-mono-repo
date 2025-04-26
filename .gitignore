@@ -1,3 +1,5 @@
 BFF/node_modules
 
 .gradle/
+
+.idea/
