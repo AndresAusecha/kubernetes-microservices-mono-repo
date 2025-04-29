@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgredb
+spec:
+  selector:
+    matchLabels:
+      app: postgredb
+  template:
+    metadata:
+      labels:
+        app: postgredb
+    spec:
+      containers:
+      - name: postgredb
+        image: postgres
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5432

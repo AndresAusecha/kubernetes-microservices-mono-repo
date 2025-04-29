@@ -7,9 +7,11 @@ import io.ktor.client.request.*
 import kotlinx.coroutines.runBlocking
 import org.springframework.beans.factory.annotation.Value
 import mu.KotlinLogging
+import org.springframework.stereotype.Component
 
 private val logger = KotlinLogging.logger {}
 
+@Component
 class BankAccountClient(
   private val client: HttpClient,
   @Value("\${bank_accounts.base_url}") private val bankAccountsUrl: String
