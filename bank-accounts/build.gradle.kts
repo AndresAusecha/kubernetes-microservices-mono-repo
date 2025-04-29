@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.bank-accounts"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 java {
 	toolchain {
@@ -26,6 +26,7 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

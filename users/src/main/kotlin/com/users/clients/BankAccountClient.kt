@@ -4,6 +4,8 @@ import com.users.dtos.BankAccountDto
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
+import io.ktor.client.utils.EmptyContent.contentType
+import io.ktor.http.*
 import kotlinx.coroutines.runBlocking
 import org.springframework.beans.factory.annotation.Value
 import mu.KotlinLogging
@@ -19,6 +21,7 @@ class BankAccountClient(
   fun createBankAccount(bankAccountDto: BankAccountDto): BankAccountDto = runBlocking {
     try {
       client.post(bankAccountsUrl) {
+        contentType(ContentType.Application.Json)
         setBody(bankAccountDto)
       }.body()
     } catch (e: Exception){

@@ -16,6 +16,7 @@ class UserService(
     @Transactional
     fun createUser(userDto: UserDto): UserDto {
         userDto.password ?: throw Exception("user password is required")
+
         val savedUser = this.repository.save(User(
             name = userDto.name,
             password = userDto.password
@@ -26,6 +27,12 @@ class UserService(
             ownerId = savedUser.id
         ))
 
-        return UserDto(name = savedUser.name, bankAccountAmount = bankAccountResponse.amount, bankAccountId = bankAccountResponse.id, bankAccountOwnerId = savedUser.id)
+        return UserDto(
+            name = savedUser.name,
+            password = savedUser.password,
+            bankAccountAmount = bankAccountResponse.amount,
+            bankAccountId = bankAccountResponse.id,
+            bankAccountOwnerId = savedUser.id
+        )
     }
 }

@@ -1,13 +1,31 @@
-exports.signUp = (req, res) => {
-  fetch()
+import fetch from "node-fetch";
 
-  res.json({ message: 'Welcome to the sign up!' });
+export const signUp = async (req, res) => {
+  try {
+    const response = await fetch('http://localhost:8081/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(req.body)
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('Success:', data);
+    res.json({ ...data });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.signIn = (req, res) => {
+export const signIn = (req, res) => {
   res.json({ message: 'Welcome to the sign in!' });
 };
 
-exports.getUserById = (req, res) => {
+export const getUserById = (req, res) => {
   res.json({ message: 'Welcome to the sign in!' });
 };

@@ -10,11 +10,13 @@
   "keywords": [
     "bff"
   ],
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "express-jwt": "^8.5.1"
+    "express-jwt": "^8.5.1",
+    "node-fetch": "^3.3.2"
   }
 }

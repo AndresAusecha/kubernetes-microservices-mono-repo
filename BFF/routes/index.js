@@ -1,11 +1,12 @@
-const express = require('express');
+import express from 'express';
+import { signUp, signIn, getUserById } from '../users/mainController.js';
+
 const router = express.Router();
-const mainController = require('../users/mainController');
 
-router.post('/sign-up', mainController.signUp);
+router.post('/sign-up', signUp);
 
-router.post('/sign-in', mainController.signIn);
+router.post('/sign-in', signIn);
 
-router.post('/user/:id', mainController.getUserById);
+router.post('/user/:id', getUserById);
 
-module.exports = router;
+export default router;

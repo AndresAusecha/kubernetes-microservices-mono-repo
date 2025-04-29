@@ -4,10 +4,11 @@ plugins {
 	id("org.springframework.boot") version "3.4.5"
 	id("io.spring.dependency-management") version "1.1.7"
 	kotlin("plugin.jpa") version "1.9.25"
+	kotlin("plugin.serialization") version "2.1.20"
 }
 
 group = "com.users"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 java {
 	toolchain {
@@ -32,6 +33,8 @@ dependencies {
 	implementation("io.ktor:ktor-client-content-negotiation:2.3.10")
 	implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.10")
 	implementation ("io.github.microutils:kotlin-logging-jvm:2.0.11")
+	implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
 
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
