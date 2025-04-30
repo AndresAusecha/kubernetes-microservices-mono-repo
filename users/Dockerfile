@@ -5,7 +5,7 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # Copy the jar file into the container
-COPY build/libs/users-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/users-0.0.1.jar app.jar
 
 # Expose the port your app runs on (e.g., 8080)
 EXPOSE 8081

@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 export const signUp = async (req, res) => {
   try {
-    const response = await fetch('http://localhost:8081/api/v1/users', {
+    const response = await fetch('http://users/api/v1/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
