@@ -7,7 +7,7 @@ The components of the architecture are two Springboot kotlin microservices which
 
 ## kubernetes description
 
-There exist one docker image per service, in each folder there also exist one deployment, services and one loadbalancing file, the deployment files have the definition of the pod, as well as ports, specs and metadata, the services are the interface to connect those pods to the rest of the cluster or the outside (in the case of the BFF).
+There exist one docker image per micro-service and BFF, in each folder there also exist one deployment, some services and one loadbalancing file, the deployment files have the definition of the what should be the pod, as well as ports, specs and metadata, the services are the interfaces to connect those pods to the rest of the cluster or the outside (in the case of the BFF).
 
 ### Service discovery in the cluster
 
