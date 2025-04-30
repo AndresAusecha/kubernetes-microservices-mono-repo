@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bank-accounts
+spec:
+  selector:
+    matchLabels:
+      app: bank-accounts
+  template:
+    metadata:
+      labels:
+        app: bank-accounts
+    spec:
+      containers:
+      - name: bank-accounts
+        image: daausecham/bank_accounts-micro-service
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
