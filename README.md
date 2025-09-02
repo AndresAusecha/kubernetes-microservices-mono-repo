@@ -3,7 +3,7 @@
 ## Development components
 
 This development experiment is only a way in which a microservices architecture can be configured using a BFF.
-The components of the architecture are two Springboot kotlin microservices which connect each other via direct HTTP calls, and then a BFF that is not exposed to the outside, this BFF is in charge of simplifying the connection from the frontend side to the backend services.
+The components of the architecture are two Springboot kotlin microservices which connect each other via direct HTTP calls, and then a BFF that is exposed to the outside, this BFF is in charge of simplifying the connection from the frontend side to the backend services.
 
 ## kubernetes description
 
